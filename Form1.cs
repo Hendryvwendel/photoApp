@@ -18,6 +18,9 @@ namespace photoApp
     {
         private string WatermarkFilePath;
         private string imgLocation;
+        private int counter = 1;
+        private string imgDestination;
+        string outputFileName;
         public HomePage()
         {
             InitializeComponent();
@@ -56,6 +59,18 @@ namespace photoApp
 
             }
         }
+        
+        private void ListPhotos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            imgLocation = SourcePath.Text + "/" + ListPhotos.SelectedItem.ToString();
+            ImagePrevious.SizeMode = PictureBoxSizeMode.Zoom;
+            ImageAfter.SizeMode = PictureBoxSizeMode.Zoom;
+            using (Bitmap tmpBitmap = new Bitmap(imgLocation))
+            {
+                ImagePrevious.Image = new Bitmap(tmpBitmap);
+                ImageAfter.Image = new Bitmap(tmpBitmap);
+            }
+        }
 
         private void SelectWatermark_Click(object sender, EventArgs e)
         {
@@ -74,6 +89,8 @@ namespace photoApp
                 {
                     WatermarkPreview.Image = new Bitmap(tmpBitmap);
                 }
+
+                WatermarkPath.Text = WatermarkFilePath;
             }
         }
 
@@ -84,6 +101,7 @@ namespace photoApp
                 string imageFolderPath = SourcePath.Text;
                 string outputFolderPath = DestinationPath.Text;
                 string watermarkImage = WatermarkFilePath;
+                
                 ImageAfter.SizeMode = PictureBoxSizeMode.Zoom;
 
                 // Controleer of de directories bestaan
@@ -101,10 +119,20 @@ namespace photoApp
                                 {
                                     Image watermark = Image.FromFile(watermarkImage);
                                     g.DrawImage(watermark, new Point(0, 0));
-                                    string outputFileName = Path.Combine(outputFolderPath, "watermarkadded-" + Path.GetFileName(imgLocation));
+
+                                    outputFileName = Path.Combine(outputFolderPath, "watermarkadded-" +
+                                        Path.GetFileName(imgLocation));
+
+                                    while (File.Exists(imgDestination))
+                                    {
+                                        string outputFileName = Path.Combine(outputFolderPath,
+                                            "watermarkadded-" + Path.GetFileName(imgLocation) + counter++);
+
+                                    }
+
                                     image.Save(outputFileName);
                                     ImageAfter.Image = new Bitmap(outputFileName);
-                                    ListPhotos.Items.Clear();
+
                                 }
                             }
                         }
@@ -148,6 +176,19 @@ namespace photoApp
                     MessageBox.Show("Please ensure the image folder and output folder exist.");
                 }
             }
+        }
+
+        private void ChooseDestination_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog SelectDestination = new FolderBrowserDialog();
+            SelectDestination.RootFolder = Environment.SpecialFolder.Desktop;
+            SelectDestination.ShowNewFolderButton = true;
+
+            if (SelectDestination.ShowDialog() == DialogResult.OK)
+            {
+                DestinationPath.Text = SelectDestination.SelectedPath;
+            }
+
         }
     }
 }

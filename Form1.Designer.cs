@@ -70,6 +70,7 @@
             this.ChooseDestination.TabIndex = 2;
             this.ChooseDestination.Text = "Choose Destination";
             this.ChooseDestination.UseVisualStyleBackColor = true;
+            this.ChooseDestination.Click += new System.EventHandler(this.ChooseDestination_Click);
             // 
             // DestinationPath
             // 
@@ -86,6 +87,7 @@
             this.ListPhotos.Name = "ListPhotos";
             this.ListPhotos.Size = new System.Drawing.Size(315, 932);
             this.ListPhotos.TabIndex = 4;
+            this.ListPhotos.SelectedIndexChanged += new System.EventHandler(this.ListPhotos_SelectedIndexChanged);
             // 
             // ImagePrevious
             // 
@@ -125,7 +127,7 @@
             this.ApplyWatermark.AutoSize = true;
             this.ApplyWatermark.Location = new System.Drawing.Point(1153, 861);
             this.ApplyWatermark.Name = "ApplyWatermark";
-            this.ApplyWatermark.Size = new System.Drawing.Size(133, 20);
+            this.ApplyWatermark.Size = new System.Drawing.Size(131, 20);
             this.ApplyWatermark.TabIndex = 9;
             this.ApplyWatermark.Text = "Apply Watermark";
             this.ApplyWatermark.UseVisualStyleBackColor = true;
@@ -172,7 +174,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.WatermarkPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
