@@ -63,7 +63,6 @@ namespace photoApp
                 {
                     WatermarkPreview.Image = new Bitmap(tmpBitmap);
                 }
-
                 WatermarkPath.Text = WatermarkFilePath;
             }
         }
@@ -98,7 +97,6 @@ namespace photoApp
                                         var outputFileName = Path.Combine(outputFolderPath,
                                             "watermarkadded-" + Path.GetFileName(imgLocation) + counter++);
                                     }
-
                                     image.Save(outputFileName);
                                     ImageAfter.Image = new Bitmap(outputFileName);
                                 }
