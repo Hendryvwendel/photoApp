@@ -49,15 +49,15 @@ namespace photoApp
 
         private void SelectWatermark_Click(object sender, EventArgs e)
         {
-            var ChooseWatermark = new OpenFileDialog();
-            ChooseWatermark.Filter = "Png Files (*.png)|*.png|All Files (*.*)|*.*";
-            ChooseWatermark.FilterIndex = 1;
-            ChooseWatermark.InitialDirectory = "c:\\";
-            ChooseWatermark.RestoreDirectory = false;
+            var chooseWatermark = new OpenFileDialog();
+            chooseWatermark.Filter = "Png Files (*.png)|*.png|All Files (*.*)|*.*";
+            chooseWatermark.FilterIndex = 1;
+            chooseWatermark.InitialDirectory = "c:\\";
+            chooseWatermark.RestoreDirectory = false;
 
-            if (ChooseWatermark.ShowDialog() == DialogResult.OK)
+            if (chooseWatermark.ShowDialog() == DialogResult.OK)
             {
-                WatermarkFilePath = ChooseWatermark.FileName;
+                WatermarkFilePath = chooseWatermark.FileName;
                 WatermarkPreview.SizeMode = PictureBoxSizeMode.Zoom;
                 using (var tmpBitmap = new Bitmap(WatermarkFilePath))
                 {
