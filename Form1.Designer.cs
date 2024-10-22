@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.SourcePath = new System.Windows.Forms.TextBox();
             this.SelectImages = new System.Windows.Forms.Button();
             this.ChooseDestination = new System.Windows.Forms.Button();
@@ -167,6 +168,7 @@
             this.Controls.Add(this.ChooseDestination);
             this.Controls.Add(this.SelectImages);
             this.Controls.Add(this.SourcePath);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomePage";
             this.Text = "PhotoApp";
             ((System.ComponentModel.ISupportInitialize)(this.ImagePrevious)).EndInit();
