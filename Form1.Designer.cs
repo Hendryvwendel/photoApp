@@ -38,7 +38,7 @@
             this.ImageAfter = new System.Windows.Forms.PictureBox();
             this.SelectWatermark = new System.Windows.Forms.Button();
             this.WatermarkPath = new System.Windows.Forms.TextBox();
-            this.ApplyWatermark = new System.Windows.Forms.CheckBox();
+            this.ApplyWatermarkCheck = new System.Windows.Forms.CheckBox();
             this.Start = new System.Windows.Forms.Button();
             this.WatermarkPreview = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePrevious)).BeginInit();
@@ -123,15 +123,15 @@
             this.WatermarkPath.Size = new System.Drawing.Size(547, 22);
             this.WatermarkPath.TabIndex = 8;
             // 
-            // ApplyWatermark
+            // ApplyWatermarkCheck
             // 
-            this.ApplyWatermark.AutoSize = true;
-            this.ApplyWatermark.Location = new System.Drawing.Point(1153, 861);
-            this.ApplyWatermark.Name = "ApplyWatermark";
-            this.ApplyWatermark.Size = new System.Drawing.Size(131, 20);
-            this.ApplyWatermark.TabIndex = 9;
-            this.ApplyWatermark.Text = "Apply Watermark";
-            this.ApplyWatermark.UseVisualStyleBackColor = true;
+            this.ApplyWatermarkCheck.AutoSize = true;
+            this.ApplyWatermarkCheck.Location = new System.Drawing.Point(1153, 861);
+            this.ApplyWatermarkCheck.Name = "ApplyWatermarkCheck";
+            this.ApplyWatermarkCheck.Size = new System.Drawing.Size(131, 20);
+            this.ApplyWatermarkCheck.TabIndex = 9;
+            this.ApplyWatermarkCheck.Text = "Apply Watermark";
+            this.ApplyWatermarkCheck.UseVisualStyleBackColor = true;
             // 
             // Start
             // 
@@ -158,7 +158,7 @@
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.WatermarkPreview);
             this.Controls.Add(this.Start);
-            this.Controls.Add(this.ApplyWatermark);
+            this.Controls.Add(this.ApplyWatermarkCheck);
             this.Controls.Add(this.WatermarkPath);
             this.Controls.Add(this.SelectWatermark);
             this.Controls.Add(this.ImageAfter);
@@ -189,7 +189,7 @@
         private System.Windows.Forms.PictureBox ImageAfter;
         private System.Windows.Forms.Button SelectWatermark;
         private System.Windows.Forms.TextBox WatermarkPath;
-        private System.Windows.Forms.CheckBox ApplyWatermark;
+        private System.Windows.Forms.CheckBox ApplyWatermarkCheck;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.PictureBox WatermarkPreview;
     }
