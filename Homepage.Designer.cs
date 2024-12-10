@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.SourcePath = new System.Windows.Forms.TextBox();
             this.SelectImages = new System.Windows.Forms.Button();
-            this.ChooseDestination = new System.Windows.Forms.Button();
-            this.DestinationPath = new System.Windows.Forms.TextBox();
             this.ListPhotos = new System.Windows.Forms.ListBox();
             this.ImagePrevious = new System.Windows.Forms.PictureBox();
             this.ImageAfter = new System.Windows.Forms.PictureBox();
@@ -41,44 +39,31 @@
             this.ApplyWatermarkCheck = new System.Windows.Forms.CheckBox();
             this.Start = new System.Windows.Forms.Button();
             this.WatermarkPreview = new System.Windows.Forms.PictureBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripHomeButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripAfbeeldingenButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageAfter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WatermarkPreview)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SourcePath
             // 
-            this.SourcePath.Location = new System.Drawing.Point(188, 23);
+            this.SourcePath.Location = new System.Drawing.Point(188, 51);
             this.SourcePath.Name = "SourcePath";
             this.SourcePath.Size = new System.Drawing.Size(500, 22);
             this.SourcePath.TabIndex = 0;
             // 
             // SelectImages
             // 
-            this.SelectImages.Location = new System.Drawing.Point(32, 23);
+            this.SelectImages.Location = new System.Drawing.Point(32, 51);
             this.SelectImages.Name = "SelectImages";
             this.SelectImages.Size = new System.Drawing.Size(132, 23);
             this.SelectImages.TabIndex = 1;
             this.SelectImages.Text = "Select Images";
             this.SelectImages.UseVisualStyleBackColor = true;
             this.SelectImages.Click += new System.EventHandler(this.SelectImages_Click);
-            // 
-            // ChooseDestination
-            // 
-            this.ChooseDestination.Location = new System.Drawing.Point(733, 24);
-            this.ChooseDestination.Name = "ChooseDestination";
-            this.ChooseDestination.Size = new System.Drawing.Size(159, 23);
-            this.ChooseDestination.TabIndex = 2;
-            this.ChooseDestination.Text = "Choose Destination";
-            this.ChooseDestination.UseVisualStyleBackColor = true;
-            this.ChooseDestination.Click += new System.EventHandler(this.ChooseDestination_Click);
-            // 
-            // DestinationPath
-            // 
-            this.DestinationPath.Location = new System.Drawing.Point(908, 24);
-            this.DestinationPath.Name = "DestinationPath";
-            this.DestinationPath.Size = new System.Drawing.Size(500, 22);
-            this.DestinationPath.TabIndex = 3;
             // 
             // ListPhotos
             // 
@@ -128,7 +113,7 @@
             this.ApplyWatermarkCheck.AutoSize = true;
             this.ApplyWatermarkCheck.Location = new System.Drawing.Point(1153, 861);
             this.ApplyWatermarkCheck.Name = "ApplyWatermarkCheck";
-            this.ApplyWatermarkCheck.Size = new System.Drawing.Size(131, 20);
+            this.ApplyWatermarkCheck.Size = new System.Drawing.Size(130, 20);
             this.ApplyWatermarkCheck.TabIndex = 9;
             this.ApplyWatermarkCheck.Text = "Apply Watermark";
             this.ApplyWatermarkCheck.UseVisualStyleBackColor = true;
@@ -151,11 +136,41 @@
             this.WatermarkPreview.TabIndex = 11;
             this.WatermarkPreview.TabStop = false;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripHomeButton,
+            this.toolStripAfbeeldingenButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1902, 25);
+            this.toolStrip1.TabIndex = 12;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripHomeButton
+            // 
+            this.toolStripHomeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripHomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripHomeButton.Name = "toolStripHomeButton";
+            this.toolStripHomeButton.Size = new System.Drawing.Size(44, 22);
+            this.toolStripHomeButton.Text = "Home";
+            this.toolStripHomeButton.Click += new System.EventHandler(this.toolStripHomeButton_Click);
+            // 
+            // toolStripAfbeeldingenButton
+            // 
+            this.toolStripAfbeeldingenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripAfbeeldingenButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripAfbeeldingenButton.Name = "toolStripAfbeeldingenButton";
+            this.toolStripAfbeeldingenButton.Size = new System.Drawing.Size(148, 22);
+            this.toolStripAfbeeldingenButton.Text = "Opgeslagen Afbeeldingen";
+            this.toolStripAfbeeldingenButton.Click += new System.EventHandler(this.toolStripAfbeeldingenButton_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.WatermarkPreview);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.ApplyWatermarkCheck);
@@ -164,26 +179,24 @@
             this.Controls.Add(this.ImageAfter);
             this.Controls.Add(this.ImagePrevious);
             this.Controls.Add(this.ListPhotos);
-            this.Controls.Add(this.DestinationPath);
-            this.Controls.Add(this.ChooseDestination);
             this.Controls.Add(this.SelectImages);
             this.Controls.Add(this.SourcePath);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomePage";
             this.Text = "PhotoApp";
             ((System.ComponentModel.ISupportInitialize)(this.ImagePrevious)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageAfter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WatermarkPreview)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
 
         private System.Windows.Forms.TextBox SourcePath;
         private System.Windows.Forms.Button SelectImages;
-        private System.Windows.Forms.Button ChooseDestination;
-        private System.Windows.Forms.TextBox DestinationPath;
         private System.Windows.Forms.ListBox ListPhotos;
         private System.Windows.Forms.PictureBox ImagePrevious;
         private System.Windows.Forms.PictureBox ImageAfter;
@@ -192,6 +205,9 @@
         private System.Windows.Forms.CheckBox ApplyWatermarkCheck;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.PictureBox WatermarkPreview;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripHomeButton;
+        private System.Windows.Forms.ToolStripButton toolStripAfbeeldingenButton;
     }
 }
 

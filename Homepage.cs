@@ -8,12 +8,25 @@ namespace photoApp
 {
     public partial class HomePage : Form
     {
+        private Form home;
+        private Form viewImage;
         private string imgLocation = "";
         private string WatermarkFilePath = "";
 
         public HomePage()
         {
             InitializeComponent();
+
+
+            // Instantieer de forms
+            home = new HomePage(); // Form1 en Form2 zijn je custom forms
+            viewImage = new ViewImages();
+
+            // Zorg dat beide forms starten op dezelfde locatie
+            home.StartPosition = FormStartPosition.Manual;
+            home.StartPosition = FormStartPosition.Manual;
+            viewImage.Location = new Point(100, 100); // Kies een gewenste locatie
+            viewImage.Location = home.Location;
         }
 
         private void SelectImages_Click(object sender, EventArgs e)
@@ -193,9 +206,30 @@ namespace photoApp
             return File.ReadAllBytes(filePath);
         }
 
-        private void ChooseDestination_Click(object sender, EventArgs e)
+        private void toolStripHomeButton_Click(object sender, EventArgs e)
         {
-            
+            if (viewImage.Visible)
+            {
+                viewImage.Hide();
+            }
+
+            if (!home.Visible)
+            {
+                home.Show();
+            }
+        }
+
+        private void toolStripAfbeeldingenButton_Click(object sender, EventArgs e)
+        {
+            if (home.Visible)
+            {
+                home.Hide();
+            }
+
+            if (!viewImage.Visible)
+            {
+                viewImage.Show();
+            }
         }
     }
 }
